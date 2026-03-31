@@ -108,8 +108,8 @@ export const projects = [
       "A full-stack web app for an IT Academy and software house with an admin dashboard.",
     href: "https://github.com/Hasnainwali",
     online: 'https://ssibannu.com',
-    image: "/assets/projects/onlinetoure.png",
-    bgImage: "/assets/projects/onlineture.png",
+    image: "/assets/projects/ssibannu.png",
+    bgImage: "/assets/projects/ssibannu.png",
     frameworks: [
       { id: 4, name: "React" },
       { id: 3, name: "JavaScript" },
@@ -127,6 +127,7 @@ export const projects = [
     description:
       "A responsive portfolio showcasing my skills, projects, and experience with modern UI design.",
     href: "https://github.com/Hasnainwali",
+    online: 'https://hasnain.dev.vercel.app',
     image: "/assets/projects/portfolio img1.png",
     bgImage: "/assets/projects/portfolio img1.png",
     frameworks: [
@@ -172,8 +173,9 @@ export const projects = [
     description:
       "A personal diary App that tracks all your activities dynamically you saved here.",
     href: "https://github.com/Hasnainwali",
-    image: "/assets/projects/todolist.png",
-    bgImage: "/assets/projects/todolist.png",
+    online: 'https://private-journal-frontend.vercel.app/',
+    image: "/assets/projects/private-journal.png",
+    bgImage: "/assets/projects/private-journal.png",
     frameworks: [
       { id: 1, name: "React" },
       { id: 2, name: "tailwind css" },
@@ -201,11 +203,24 @@ export const projects = [
 
 
 export const socials = [
-  { name: "Instagram", href: "https://www.instagram.com/awlad_e_adam?igsh=OGQ5ZDc2ODk2ZA==" },
+  {
+    name: "Instagram",
+    href: "https://www.instagram.com/awlad_e_adam?igsh=OGQ5ZDc2ODk2ZA=="
+  },
   {
     name: "Facebook",
     href: "https://www.facebook.com/share/1KP3X5oysv/",
   },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/hasnainwali/" },
-  { name: "GitHub", href: "https://github.com/Hasnainwali" },
+  {
+    name: "Whatsapp",
+    href: "https://wa.me/+92312633952%20?text=Hello%20Hasnain%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%20I%20am%20interested%20in%20learning%20more%20about%20your%20work%20and%20potentially%20collaborating.%20Please%20let%20me%20know%20if%20you%27d%20be%20open%20to%20a%20conversation.%0AThank you!",
+  },
+  {
+    name: "LinkedIn",
+    href: "https://www.linkedin.com/in/hasnainwali/"
+  },
+  {
+    name: "GitHub",
+    href: "https://github.com/Hasnainwali"
+  },
 ];

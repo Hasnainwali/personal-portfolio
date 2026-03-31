@@ -2,7 +2,8 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import projotnoTea from "/assets/clients/projotno_tea.jpg";
+import projotnoTea from "/assets/clients/projotno_tea.png";
+import ssiBannu from "/assets/clients/ssibannu.png";
 import axisway from "/assets/clients/axisway.jpg";
 import pulseFitness from "/assets/clients/pulse_fitness.jpg";
 import playwearBD from "/assets/clients/playwearBD.jpg";
@@ -20,15 +21,15 @@ gsap.registerPlugin(ScrollTrigger);
 
 const PLACEHOLDER_LOGOS = [
   projotnoTea,
-  axisway,
+  ssiBannu,
   playwearBD,
   interaid,
   puppetbrush,
   qahaf,
-  retrofino,
-  sikder_foundation,
-  treatosBD,
-  pulseFitness,
+  // retrofino,
+  // sikder_foundation,
+  // treatosBD,
+  // pulseFitness,
 ];
 
 const LogoCell = ({ logo, borderClasses = "" }) => {
@@ -113,8 +114,8 @@ export default function ClientsLogo() {
                 borderClasses="border-r border-b"
               />
               <LogoCell logo={PLACEHOLDER_LOGOS[5]} borderClasses="border-b" />
-              <LogoCell logo={PLACEHOLDER_LOGOS[6]} borderClasses="border-r" />
-              <LogoCell logo={PLACEHOLDER_LOGOS[7]} height="h-6.5" />
+              {/* <LogoCell logo={PLACEHOLDER_LOGOS[6]} borderClasses="border-r" />
+              <LogoCell logo={PLACEHOLDER_LOGOS[7]} height="h-6.5" /> */}
             </div>
             <div className="grid grid-cols-2">
               <div className="col-span-2 aspect-square flex justify-center items-center border-b pl-8 pb-8 overflow-hidden">
@@ -124,9 +125,9 @@ export default function ClientsLogo() {
                   className="w-full h-full"
                 />
               </div>
-              <LogoCell logo={PLACEHOLDER_LOGOS[8]} borderClasses="border-r" />
+              {/* <LogoCell logo={PLACEHOLDER_LOGOS[8]} borderClasses="border-r" />
 
-              <LogoCell logo={PLACEHOLDER_LOGOS[9]} />
+              <LogoCell logo={PLACEHOLDER_LOGOS[9]} /> */}
             </div>
           </div>
         </div>

@@ -60,8 +60,8 @@ const ServiceSummary = () => {
       </div>
       <div id="title-service-4" className="flex items-center justify-center gap-3 translate-x-10 md:translate-x-20">
         <p>Databases</p>
-        <div className="w-10 h-0.5 md:h-1 md:w-32 bg-gold" />
-        <p>SaaS</p>
+        {/* <div className="w-10 h-0.5 md:h-1 md:w-32 bg-gold" /> */}
+        {/* <p>SaaS</p> */}
       </div>
     </section>
   );

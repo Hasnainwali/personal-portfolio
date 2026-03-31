@@ -139,6 +139,12 @@ const Works = () => {
                   className="md:size-6 size-5"
                 />
               </a>
+              <a href={project.online} target="_blank">
+                <Icon
+                  icon="lucide:arrow-up-right"
+                  className="md:size-6 size-5"
+                />
+              </a>
             </div>
             {/* divider */}
             <div className="w-full h-0.5 bg-black/80" />
