@@ -139,7 +139,7 @@ const Works = () => {
                   className="md:size-6 size-5"
                 />
               </a>
-              <a href={project.online} target="_blank">
+              <a href={project.online}>
                 <Icon
                   icon="lucide:arrow-up-right"
                   className="md:size-6 size-5"

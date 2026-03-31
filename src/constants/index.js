@@ -127,7 +127,7 @@ export const projects = [
     description:
       "A responsive portfolio showcasing my skills, projects, and experience with modern UI design.",
     href: "https://github.com/Hasnainwali",
-    online: 'https://hasnain.dev.vercel.app',
+    online: 'https://hasnainwali-official.vercel.app/',
     image: "/assets/projects/portfolio img1.png",
     bgImage: "/assets/projects/portfolio img1.png",
     frameworks: [
