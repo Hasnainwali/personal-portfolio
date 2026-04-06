@@ -4,10 +4,14 @@ import { projects } from "../constants";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
+import { Navigate } from "react-router-dom";
+import ProjectModal from "../components/ProjectModal";
 
 const Works = () => {
   const overlayRefs = useRef([]);
   const previewRef = useRef(null);
+
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const [currentIndex, setCurrentIndex] = useState(null);
   const text = `Featured projects reflects my process of solving
@@ -119,6 +123,7 @@ const Works = () => {
             className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
+            onClick={() => setSelectedProject(project)}
           >
             {/* overlay */}
             <div
@@ -185,6 +190,14 @@ const Works = () => {
           )}
         </div>
       </div>
+      {
+        selectedProject && (
+          <ProjectModal
+            project={selectedProject}
+            onClose={() => setSelectedProject(null)}
+          />
+        )
+      }
     </section>
   );
 };
