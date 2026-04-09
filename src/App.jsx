@@ -12,8 +12,20 @@ import Contact from "./sections/Contact";
 import { useProgress } from "@react-three/drei";
 import ClientsLogo from "./sections/ClientsLogo";
 import Testimonials from "./sections/Testimonials";
+import SEO from "./components/Seo.jsx";
 
 const App = () => {
+
+  <SEO
+    title="Hasnain wali | MERN Stack Developer"
+    description="Hasnain wali is a skilled Full Stack MERN Developer specializing in MongoDB, Express.js, React, and Node.js. I build scalable, high-performance web applications with modern technologies. Explore my portfolio of successful projects and let's collaborate on your next web development venture."
+    image="/images/hasnain.webp"
+    url="https://hasnainwali-official.vercel.app"
+    keywords="Hasnain wali, MERN Stack Developer portfolio, Full Stack Developer portfolio, MongoDB, Express.js, React, Node.js, mern stack developer portfolio, mern stack developer portfolio template,
+    "/>
+
+
+
   const { progress } = useProgress();
   const [isReady, setIsReady] = useState(false);
 
