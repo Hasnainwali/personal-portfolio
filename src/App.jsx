@@ -17,12 +17,13 @@ import SEO from "./components/Seo.jsx";
 const App = () => {
 
   <SEO
-    title="Hasnain wali | MERN Stack Developer"
-    description="Hasnain wali is a skilled Full Stack MERN Developer specializing in MongoDB, Express.js, React, and Node.js. I build scalable, high-performance web applications with modern technologies. Explore my portfolio of successful projects and let's collaborate on your next web development venture."
+    title={title}
+    description={` ${description}. Explore my portfolio of successful projects and let's collaborate on your next web development venture.`}
+
     image="/images/hasnain.webp"
     url="https://hasnainwali-official.vercel.app"
-    keywords="Hasnain wali, MERN Stack Developer portfolio, Full Stack Developer portfolio, MongoDB, Express.js, React, Node.js, mern stack developer portfolio, mern stack developer portfolio template, hasnain wali projects, hasnain wali contact, hasnain wali services
-    "/>
+    keywords="Hasnain wali, MERN Stack Developer portfolio, Full Stack Developer portfolio, MongoDB, Express.js, React, Node.js, mern stack developer portfolio, mern stack developer portfolio template,"
+  />
 
 
 

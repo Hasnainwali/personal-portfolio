@@ -9,9 +9,11 @@ const SEO = ({
     keywords,
 }) => {
     const siteName = "Hasnain wali";
-    const defaultTitle = `${siteName} | MERN Stack Developer`;
+    const defaultTitle = "Hasnain Wali | MERN Stack Developer Portfolio in Pakistan";
+
     const defaultDescription =
-        "Hasnain wali is a skilled Full Stack MERN Developer specializing in MongoDB, Express.js, React, and Node.js. I build scalable, high-performance web applications with modern technologies. Explore my portfolio of successful projects and let's collaborate on your next web development venture.";
+        "Hasnain Wali is a MERN Stack Developer from Pakistan specializing in React, Node.js, and MongoDB. Explore my portfolio and projects.";
+
     const defaultImage =
         "/images/hasnain.webp";
     const siteUrl = "https://hasnainwali-official.vercel.app";
@@ -31,9 +33,10 @@ const SEO = ({
                 name="keywords"
                 content={
                     keywords ||
-                    "Hasnain wali, MERN Stack Developer, Full Stack Developer, MongoDB, Express.js, React, Node.js, mern stack developer portfolio, mern stack developer portfolio template web developer portfolio website, software engineer portfolio, full stack developer portfolio, web developer portfolio, hasanain wali contact, hasnain projects, hasnain skills, mern stack developer requirements, mern stack developer average salary, mern stack developer salary, what is mern stack developer, mern stack developer jobs, mern stack developer salary in dubai, saudi, UAE, mern stack developer salary in india"
+                    "Hasnain wali, MERN Stack Developer, Full Stack Developer, MongoDB, Express.js, React, Node.js, mern stack developer portfolio, mern stack developer portfolio templates, web developer portfolio website, software engineer portfolio, full stack developer portfolio, web developer portfolio,Hasnain Wali, MERN Stack Developer, React Developer Pakistan, Full Stack Developer Portfolio, Node.js Developer"
                 }
             />
+            
 
             <meta name="author" content="Hasnain Wali" />
             <meta name="robots" content="index, follow" />
@@ -65,21 +68,21 @@ const SEO = ({
             <script type="application/ld+json">
                 {JSON.stringify({
                     "@context": "https://schema.org",
-                    "@type": "Organization",
-                    name: "Hasnain wali MERN Stack developer",
-                    url: siteUrl,
-                    logo: defaultImage,
-                    description: defaultDescription,
-                    address: {
+                    "@type": "Person",
+                    "name": "Hasnain Wali",
+                    "url": siteUrl,
+                    "image": defaultImage,
+                    "jobTitle": "MERN Stack Developer",
+                    "address": {
                         "@type": "PostalAddress",
-                        addressLocality: "Bannu",
-                        addressRegion: "KPK",
-                        addressCountry: "Pakistan",
+                        "addressLocality": "Bannu",
+                        "addressRegion": "KPK",
+                        "addressCountry": "Pakistan"
                     },
-                    sameAs: [
-                        "https://www.facebook.com/",
+                    "sameAs": [
                         "https://www.linkedin.com/",
-                    ],
+                        "https://github.com/"
+                    ]
                 })}
             </script>
 
