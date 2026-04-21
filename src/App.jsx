@@ -17,8 +17,8 @@ import SEO from "./components/Seo.jsx";
 const App = () => {
 
   <SEO
-    title={title}
-    description={` ${description}. Explore my portfolio of successful projects and let's collaborate on your next web development venture.`}
+    title="Hasnain Wali | MERN Stack Developer Portfolio in Pakistan"
+    description="Hasnain Wali is a MERN Stack Developer from Pakistan specializing in React, Node.js, and MongoDB. Explore my portfolio and projects."
 
     image="/images/hasnain.webp"
     url="https://hasnainwali-official.vercel.app"

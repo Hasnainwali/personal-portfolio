@@ -59,7 +59,7 @@ function ProjectModal({ project, onClose }) {
                 {/* Close Button */}
                 <button
                     onClick={handleClose}
-                    className="absolute top-2 right-3 text-gray-700 hover:text-black text-xl
+                    className="absolute top-1 right-3 text-gray-700 hover:text-black text-lg
                     font-semibold"
                 >
                     ✕
@@ -69,7 +69,7 @@ function ProjectModal({ project, onClose }) {
                 <img
                     src={project.image}
                     alt={`${project.name} - Image`}
-                    className="w-full h-60 object-cover rounded-xl mb-4"
+                    className="w-full h-60 object-cover rounded-b-xl my-4"
                 />
 
                 {/* Title */}

@@ -37,7 +37,7 @@ const LogoCell = ({ logo, borderClasses = "" }) => {
     <div
       className={`w-full aspect-square flex justify-center items-center relative ${borderClasses} overflow-hidden`}
     >
-      <img src={logo} alt="client logo" className={`absolute object-cover`} />
+      <img src={logo} alt="client logo" className={`absolute object-cover grayscale`} />
     </div>
   );
 };
