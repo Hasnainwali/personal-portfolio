@@ -86,8 +86,10 @@ export const projects = [
     name: "Online Tour Booking System",
     description:
       "A full-stack web app to book tours, manage plans, and view bookings with an admin dashboard.",
+    caseStudy:
+      "Built for a local tour agency facing manual booking issues and poor customer management. I solved the problem by creating a centralized digital platform where users can explore, book, and manage tours online, while admins can control tour plans, bookings, and users from a dashboard. Scope included authentication, role-based access, booking management, cloud image storage, and scalable backend APIs. Result: reduced manual workload and improved booking efficiency.",
     href: "https://github.com/Hasnainwali",
-    online: 'https://hw-tours.netlify.app/',
+    online: "https://hw-tours.netlify.app/",
     image: "/assets/projects/onlineture.png",
     bgImage: "/assets/projects/onlineture.png",
     frameworks: [
@@ -101,13 +103,16 @@ export const projects = [
       { id: 10, name: "Cloudinary" },
     ],
   },
+
   {
     id: 2,
     name: "ssibannu",
     description:
       "A full-stack web app for an IT Academy and software house with an admin dashboard.",
+    caseStudy:
+      "Designed and developed for an IT academy needing a strong online presence and internal management system. The challenge was handling course visibility, student inquiries, and content management in one place. I built a full-stack platform with dynamic course/service management, admin controls, inquiry handling, and media management. Scope included responsive frontend, secure backend, and scalable database design. Result: improved digital branding and easier operational management.",
     href: "https://github.com/Hasnainwali",
-    online: 'https://ssibannu.com',
+    online: "https://ssibannu.com",
     image: "/assets/projects/ssibannu.png",
     bgImage: "/assets/projects/ssibannu.png",
     frameworks: [
@@ -121,13 +126,16 @@ export const projects = [
       { id: 10, name: "Cloudinary" },
     ],
   },
+
   {
     id: 3,
     name: "Personal Portfolio Website",
     description:
       "A responsive portfolio showcasing my skills, projects, and experience with modern UI design.",
+    caseStudy:
+      "Created to build my personal brand and professionally showcase my work to clients and recruiters. The main challenge was standing out in a competitive market. I solved this through a premium modern UI, smooth animations, optimized performance, and clear storytelling of projects and skills. Scope included responsive design, advanced animations, SEO optimization, and reusable component architecture. Result: stronger professional presence and better client trust.",
     href: "https://github.com/Hasnainwali",
-    online: 'https://hasnainwali-official.vercel.app/',
+    online: "https://hasnainwali-official.vercel.app/",
     image: "/assets/projects/portfolio img1.png",
     bgImage: "/assets/projects/portfolio img1.png",
     frameworks: [
@@ -138,11 +146,14 @@ export const projects = [
       { id: 5, name: "Three JS" },
     ],
   },
+
   {
     id: 4,
     name: "Hex Color Generator",
     description:
-      "An App which generates different gradient colors. The colors can be copied by one click.",
+      "An Web App which generates different gradient colors. The colors can be copied by one click.",
+    caseStudy:
+      "Developed as a utility tool for designers and developers who spend time manually selecting and testing colors. The problem was inefficient color experimentation. I solved it by creating an instant random gradient generator with one-click copy functionality. Scope included DOM manipulation, dynamic styling logic, and user-friendly interaction design. Result: faster design workflow and better developer productivity.",
     href: "https://github.com/Hasnainwali",
     image: "/assets/projects/hex-color-gen.png",
     bgImage: "/assets/projects/hex-color-gen.png",
@@ -152,28 +163,16 @@ export const projects = [
       { id: 3, name: "JavaScript" },
     ],
   },
-  // {
-  //   id: 4,
-  //   name: "Real Estate Website",
-  //   description:
-  //     "A responsive property listing website with modern design built using HTML, Tailwind CSS, and JavaScript.",
-  //   href: "https://github.com/Hasnainwali",
-  //   image: "./public/real estate.jpg",
-  //   bgImage: "./public/real estate.png",
-  //   frameworks: [
-  //     { id: 1, name: "HTML" },
-  //     { id: 2, name: "CSS" },
-  //     { id: 3, name: "JavaScript" },
-  //     { id: 5, name: "Tailwind CSS" },
-  //   ],
-  // },
+
   {
     id: 5,
     name: "Private Journal App",
     description:
-      "A personal diary App that tracks all your activities dynamically you saved here.",
+      "A personal diary App that tracks all your activities dynamically you saved here with complete authentication and ownership",
+    caseStudy:
+      "Built to solve privacy and ownership issues in traditional note-taking apps. Users needed a secure place to save personal thoughts and daily activities. I created a full-stack journal platform with authentication, private note ownership, protected routes, and CRUD functionality. Scope included user security, scalable backend APIs, responsive UI, and database optimization. Result: users get a secure personal digital diary experience.",
     href: "https://github.com/Hasnainwali",
-    online: 'https://private-journal-frontend.vercel.app/',
+    online: "https://private-journal-frontend.vercel.app/",
     image: "/assets/projects/private-journal.png",
     bgImage: "/assets/projects/private-journal.png",
     frameworks: [
@@ -185,20 +184,6 @@ export const projects = [
       { id: 6, name: "JavaScript" },
     ],
   },
-  // {
-  //   id: 6,
-  //   name: "To Do List App",
-  //   description:
-  //     "An App that tracks all your activities you saved here.",
-  //   href: "https://github.com/Hasnainwali",
-  //   image: "/assets/projects/todolist.png",
-  //   bgImage: "/assets/projects/todolist.png",
-  //   frameworks: [
-  //     { id: 1, name: "HTML" },
-  //     { id: 2, name: "CSS" },
-  //     { id: 3, name: "JavaScript" },
-  //   ],
-  // },
 ];
 
 
@@ -217,7 +202,7 @@ export const socials = [
   },
   {
     name: "LinkedIn",
-    href: "https://www.linkedin.com/in/hasnainwali/"
+    href: "https://www.linkedin.com/in/hasnain-wali"
   },
   {
     name: "GitHub",
