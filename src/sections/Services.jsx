@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from 'react-router-dom'
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 import { servicesData } from "../constants";
 import { useMediaQuery } from "react-responsive";
@@ -42,9 +43,9 @@ const Services = () => {
           style={
             isDesktop
               ? {
-                  top: `calc(10vh + ${index * 5}em)`,
-                  marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
-                }
+                top: `calc(10vh + ${index * 5}em)`,
+                marginBottom: `${(servicesData.length - index - 1) * 5}rem`,
+              }
               : { top: 0 }
           }
         >
@@ -68,6 +69,14 @@ const Services = () => {
                     )}
                   </div>
                 ))}
+              </div>
+              <div className="mt-6">
+                <Link
+                  to={`/services/${service.title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')}`}
+                  className="inline-block mt-4 bg-white text-black px-4 py-2 rounded"
+                >
+                  Learn more
+                </Link>
               </div>
             </div>
           </div>

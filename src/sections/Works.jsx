@@ -4,7 +4,7 @@ import { projects } from "../constants";
 import { useRef, useState } from "react";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
-import { Navigate } from "react-router-dom";
+import { useNavigate } from 'react-router-dom'
 import ProjectModal from "../components/ProjectModal";
 
 const Works = () => {
@@ -103,6 +103,8 @@ const Works = () => {
     moveY.current(mouse.current.y);
   };
 
+  const navigate = useNavigate()
+
   return (
     <section id="work" className="flex flex-col min-h-screen">
       <AnimatedHeaderSection
@@ -123,7 +125,7 @@ const Works = () => {
             className="relative flex flex-col gap-1 py-5 cursor-pointer group md:gap-0"
             onMouseEnter={() => handleMouseEnter(index)}
             onMouseLeave={() => handleMouseLeave(index)}
-            onClick={() => setSelectedProject(project)}
+            onClick={() => navigate(`/projects/${project.id}`)}
           >
             {/* overlay */}
             <div
