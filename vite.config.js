@@ -11,7 +11,6 @@ const sitemapRoutes = [
   { url: '/#about', changefreq: 'monthly', priority: 0.7 },
   { url: '/#contact', changefreq: 'monthly', priority: 0.8 },
 ];
-
 export default defineConfig({
   plugins: [
     tailwindcss(),
