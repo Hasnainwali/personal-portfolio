@@ -11,6 +11,7 @@ const sitemapRoutes = [
   { url: '/#about', changefreq: 'monthly', priority: 0.7 },
   { url: '/#contact', changefreq: 'monthly', priority: 0.8 },
 ];
+
 export default defineConfig({
   plugins: [
     tailwindcss(),
@@ -24,18 +25,5 @@ export default defineConfig({
       exclude: ['/admin', '/private'],
     }),
   ],
-  build: {
-    rollupOptions: {
-      output: {
-        manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react') || id.includes('react-dom')) return 'vendor-react'
-            if (id.includes('three') || id.includes('@react-three')) return 'vendor-three'
-            if (id.includes('gsap')) return 'vendor-gsap'
-            return 'vendor'
-          }
-        }
-      }
-    }
-  }
+  
 });
