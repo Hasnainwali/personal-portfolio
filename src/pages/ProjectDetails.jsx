@@ -1,6 +1,6 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
-import { projects } from '../constants'
+import { projects } from '../constants/index.js'
 import SEO from '../components/Seo'
 import { ImageOptimizer } from '../utils/imageOptimizer'
 
