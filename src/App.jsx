@@ -24,7 +24,7 @@ const App = () => {
   const seoProps = {
     title: "Hasnain Wali | MERN Stack Developer Portfolio",
     description:
-      "MERN Stack Developer from Pakistan. Building scalable, high-performance web applications with React, Node.js, and MongoDB.",
+      "MERN Stack Developer from Pakistan Kpk Bannu. Building scalable, high-performance web applications with React, Node.js, and MongoDB.",
     image: "/images/hasnain.webp",
     url: "https://hasnainwali-official.vercel.app",
     keywords:
