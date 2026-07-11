@@ -13,14 +13,14 @@ const SEO = ({
 }) => {
     const siteName = "Hasnain Wali";
     const siteUrl = "https://hasnainwali-official.vercel.app";
-    const defaultTitle = "Hasnain Wali | MERN Stack Developer Portfolio";
+    const defaultTitle = "Hasnain Wali | MERN Stack Developer";
     const defaultDescription =
-        "MERN Stack Developer from Pakistan. Building scalable, high-performance web applications with React, Node.js, and MongoDB.";
+        "MERN Stack Developer from Pakistan. Building bussiness representative websites and scalable, high-performance web applications with React, Node.js, and MongoDB and using cloud services";
     const defaultImage = "/images/hasnain.webp";
 
     const cleanKeywords =
         keywords ||
-        "MERN Stack Developer, Full Stack Developer Pakistan, React Developer, Node.js Developer, MongoDB, Web Development Portfolio, SaaS Development, API Development";
+        "MERN Stack Developer, Full Stack Developer Pakistan, React Developer, Node.js Developer, MongoDB, Web Development Portfolio, portfolio, mern stack portfolio, SaaS Development, API Development, hasnainwali portfolio";
 
     const portfolioSchema = {
         "@context": "https://schema.org",
@@ -32,20 +32,20 @@ const SEO = ({
         description: defaultDescription,
         address: {
             "@type": "PostalAddress",
-            addressLocality: "Bannu",
             addressRegion: "KPK",
             addressCountry: "PK",
         },
         sameAs: [
-            "https://www.linkedin.com/in/hasnain-wali/",
+            "https://www.linkedin.com/in/Hasnainwali/",
             "https://github.com/Hasnainwali",
-            "https://twitter.com/hasnain_wali",
         ],
         knowsAbout: [
             "React",
             "Node.js",
             "MongoDB",
             "Express.js",
+            "Redux toolkit",
+            "Cloud",
             "API Development",
             "Full Stack Development",
             "SaaS Architecture",
@@ -132,7 +132,7 @@ const SEO = ({
         logo: defaultImage,
         description: defaultDescription,
         sameAs: [
-            "https://www.linkedin.com/in/hasnain-wali/",
+            "https://www.linkedin.com/in/Hasnainwali/",
             "https://github.com/Hasnainwali",
         ],
         foundingDate: "2022",
@@ -181,7 +181,7 @@ const SEO = ({
             />
             <link rel="manifest" href="/manifest.json" />
             <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-            <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
+            <link rel="apple-touch-icon" href="/images/hasnain.webp.png" />
         </Helmet>
     );
 };

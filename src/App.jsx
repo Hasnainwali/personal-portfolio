@@ -1,5 +1,4 @@
 import React, { useEffect, useState, lazy, Suspense } from "react";
-import { SpeedInsights } from '@vercel/speed-insights/react';
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
 import ServiceSummary from "./sections/ServiceSummary";
@@ -22,9 +21,9 @@ const ServiceDetails = lazy(() => import('./pages/ServiceDetails'));
 const App = () => {
 
   const seoProps = {
-    title: "Hasnain Wali | MERN Stack Developer Portfolio",
+    title: "Hasnain Wali | MERN Stack Developer",
     description:
-      "MERN Stack Developer from Pakistan Kpk Bannu. Building scalable, high-performance web applications with React, Node.js, and MongoDB.",
+      "MERN Stack Developer from Pakistan Kpk Bannu. Building scalable, high-performance web applications with React, Node.js, and MongoDB and using cloud services",
     image: "/images/hasnain.webp",
     url: "https://hasnainwali-official.vercel.app",
     keywords:
@@ -73,21 +72,18 @@ const App = () => {
         {/* <Testimonials /> */}
         <Contact />
       </div>
-
-      <SpeedInsights />
     </ReactLenis>
   );
 
   return (
     <>
       <SEO {...seoProps} />
-      <Suspense fallback={<div className="min-h-screen flex items-center justify-center">Loading...</div>}>
-        <Routes>
-          <Route path="/" element={Home} />
-          <Route path="/projects/:id" element={<ProjectDetails />} />
-          <Route path="/services/:slug" element={<ServiceDetails />} />
-        </Routes>
-      </Suspense>
+
+      <Routes>
+        <Route path="/" element={Home} />
+        <Route path="/projects/:id" element={<ProjectDetails />} />
+        <Route path="/services/:slug" element={<ServiceDetails />} />
+      </Routes>
     </>
   );
 };

@@ -149,6 +149,25 @@ export const projects = [
 
   {
     id: 4,
+    name: "Online Property",
+    description:
+      "An Web App In which properties can be sell and buy. This is real Eastate platform where dealers can represent their societies, homes, villas etc.",
+    caseStudy:
+      "Developed a full-stack real estate platform that simplifies property buying and selling through a secure online marketplace. The application supports three user roles—Admin, Seller, and Buyer—allowing sellers to publish and manage property listings, buyers to discover and inquire about properties, and administrators to oversee users, listings, and platform activities through a centralized dashboard. Currently under active development with ongoing feature enhancements and performance improvements.",
+    href: "https://property-production-frontend.vercel.app/",
+    image: "/assets/projects/hex-color-gen.png",
+    bgImage: "/assets/projects/hex-color-gen.png",
+    frameworks: [
+      { id: 1, name: "React" },
+      { id: 2, name: "Expres JS Node JS" },
+      { id: 3, name: "MongoDb" },
+      { id: 3, name: "Redux toolkit" },
+      { id: 3, name: "Cloudinay cloud" },
+    ],
+  },
+
+  {
+    id: 4,
     name: "Hex Color Generator",
     description:
       "An Web App which generates different gradient colors. The colors can be copied by one click.",
@@ -198,7 +217,7 @@ export const socials = [
   },
   {
     name: "Whatsapp",
-    href: "https://wa.me/+92312633952%20?text=Hello%20Hasnain%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%20I%20am%20interested%20in%20learning%20more%20about%20your%20work%20and%20potentially%20collaborating.%20Please%20let%20me%20know%20if%20you%27d%20be%20open%20to%20a%20conversation.%0AThank you!",
+    href: "https://wa.me/+923142633952%20?text=Hello%20Hasnain%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%20I%20am%20interested%20in%20learning%20more%20about%20your%20work%20and%20potentially%20collaborating.%20Please%20let%20me%20know%20if%20you%27d%20be%20open%20to%20a%20conversation.%0AThank you!",
   },
   {
     name: "LinkedIn",
