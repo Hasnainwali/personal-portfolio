@@ -1,4 +1,4 @@
-# 🌐 Hasanin wali Developer Portfolio
+# 🌐 Hasnain wali Developer Portfolio
 
 ### Built with React, GSAP, Three.js, TailwindCSS
 
