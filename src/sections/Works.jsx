@@ -23,6 +23,8 @@ const Works = () => {
   const moveY = useRef(null);
 
   useGSAP(() => {
+    const triggers = [];
+
     moveX.current = gsap.quickTo(previewRef.current, "x", {
       duration: 1.5,
       ease: "power3.out",
@@ -32,7 +34,7 @@ const Works = () => {
       ease: "power3.out",
     });
 
-    gsap.from("#project", {
+    const projectAnimation = gsap.from("#project", {
       y: 100,
       opacity: 0,
       delay: 0.5,
@@ -43,6 +45,15 @@ const Works = () => {
         trigger: "#project",
       },
     });
+
+    if (projectAnimation.scrollTrigger) {
+      triggers.push(projectAnimation.scrollTrigger);
+    }
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      triggers.forEach(trigger => trigger?.kill());
+    };
   }, []);
 
   const handleMouseEnter = (index) => {
@@ -146,7 +157,7 @@ const Works = () => {
                   className="md:size-6 size-5"
                 />
               </a>
-              <a href={project.online}>
+              <a href={project.online} target="_blank">
                 <Icon
                   icon="lucide:arrow-up-right"
                   className="md:size-6 size-5"
@@ -168,7 +179,7 @@ const Works = () => {
             </div>
             {/* mobile preview image */}
             <div className="px-4 md:px-10 md:hidden">
-              <div className="w-full aspect-[1930/1080] overflow-hidden rounded relative flex items-center justify-center">
+              <div className="w-full aspect-1930/1080 overflow-hidden rounded relative flex items-center justify-center">
                 <img
                   src={project.image}
                   alt={`${project.name}-image`}
@@ -179,18 +190,20 @@ const Works = () => {
           </div>
         ))}
         {/* desktop Flaoting preview image */}
-        <div
-          ref={previewRef}
-          className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[520px] md:block hidden opacity-0"
-        >
-          {currentIndex !== null && (
-            <img
-              src={projects[currentIndex].image}
-              alt="preview"
-              className="object-cover w-full h-full"
-            />
-          )}
-        </div>
+        {window.innerWidth >= 768 && (
+          <div
+            ref={previewRef}
+            className="fixed -top-2/6 left-0 z-50 overflow-hidden border-8 border-black pointer-events-none w-[90vw] md:w-[520px] max-w-[520px] md:block hidden opacity-0"
+          >
+            {currentIndex !== null && (
+              <img
+                src={projects[currentIndex].image}
+                alt="preview"
+                className="object-cover w-full h-full"
+              />
+            )}
+          </div>
+        )}
       </div>
       {
         selectedProject && (

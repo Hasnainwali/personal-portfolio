@@ -50,7 +50,8 @@ const ServiceDetails = () => {
                 <div className="mt-8">
                     <h3 className="text-xl font-semibold">Ready to start?</h3>
                     <p className="mt-2 text-gray-700">Contact me to discuss your project and get a fixed estimate.</p>
-                    <a href="https://wa.me/+923142633952%20?text=Hello%20Hasnain%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you.%20I%20am%20interested%20in%20learning%20more%20about%20your%20work%20and%20potentially%20collaborating.%20Please%20let%20me%20know%20if%20you%27d%20be%20open%20to%20a%20conversation.%0AThank you!"
+                    <a href="https://wa.me/+923142633952?text=Hello%20Hasnain,%20I%20am%20interested%20in%20your%20services."
+                        target='_blank'
                         className="inline-block mt-4 bg-black text-white px-4 py-2 rounded">Contact</a>
                 </div>
             </div>

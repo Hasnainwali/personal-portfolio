@@ -77,4 +77,5 @@ export function Planet(props) {
   );
 }
 
-useGLTF.preload("/models/Planet.glb");
+// Removed preload to defer loading until component renders
+// useGLTF.preload("/models/Planet.glb");

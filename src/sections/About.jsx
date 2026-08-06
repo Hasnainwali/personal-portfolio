@@ -15,7 +15,9 @@ const About = () => {
   When I'm not coding or creating, you'll find me exploring new tech trends, experimenting with animations, or refining UI/UX flows to the last detail.`;
   const imgRef = useRef(null);
   useGSAP(() => {
-    gsap.to("#about", {
+    const triggers = [];
+
+    const scaleAnimation = gsap.to("#about", {
       scale: 0.95,
       scrollTrigger: {
         trigger: "#about",
@@ -26,16 +28,27 @@ const About = () => {
       },
       ease: "power1.inOut",
     });
+    if (scaleAnimation.scrollTrigger) {
+      triggers.push(scaleAnimation.scrollTrigger);
+    }
 
     gsap.set(imgRef.current, {
       clipPath: "polygon(0 100%, 100% 100%, 100% 100%, 0% 100%)",
     });
-    gsap.to(imgRef.current, {
+    const imgAnimation = gsap.to(imgRef.current, {
       clipPath: "polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)",
       duration: 2,
       ease: "power4.out",
       scrollTrigger: { trigger: imgRef.current },
     });
+    if (imgAnimation.scrollTrigger) {
+      triggers.push(imgAnimation.scrollTrigger);
+    }
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      triggers.forEach(trigger => trigger?.kill());
+    };
   });
   return (
     <section id="about" className="min-h-screen bg-black rounded-b-4xl">
@@ -49,8 +62,10 @@ const About = () => {
       <div className="flex flex-col items-center justify-between gap-16 px-4 md:px-10 pb-16 text-xl font-light tracking-wide lg:flex-row-reverse md:text-2xl lg:text-3xl text-white/60">
         <img
           ref={imgRef}
-          src="images/hasnain.webp"
+          src="images/about-img-1.webp"
           alt="hasnain wali photo"
+          width="850"
+          height="1050"
           className="rounded-xl w-full lg:w-2/5 grayscale-100"
         />
         <AnimatedTextLines text={aboutText} className={"w-full text-lg"} lineGap="pb-5 last:pb-0" />

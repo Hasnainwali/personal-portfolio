@@ -6,37 +6,53 @@ gsap.registerPlugin(ScrollTrigger);
 
 const ServiceSummary = () => {
   useGSAP(() => {
-    gsap.to("#title-service-1", {
-      xPercent: 20,
-      scrollTrigger: {
-        target: "#title-service-1",
-        scrub: true,
-      },
-    });
-    gsap.to("#title-service-2", {
-      xPercent: -30,
-      scrollTrigger: {
-        target: "#title-service-2",
-        scrub: true,
-      },
-    });
-    gsap.to("#title-service-3", {
-      xPercent: 60,
-      scrollTrigger: {
-        target: "#title-service-3",
-        scrub: true,
-      },
-    });
-    gsap.to("#title-service-4", {
-      xPercent: -40,
-      scrollTrigger: {
-        target: "#title-service-4",
-        scrub: true,
-      },
-    });
+    // Check if viewport is mobile (< 768px)
+    const isMobile = window.matchMedia('(max-width: 767px)').matches;
+
+    // Only apply transforms on desktop to prevent mobile overflow
+    if (!isMobile) {
+      const triggers = [];
+
+      triggers.push(gsap.to("#title-service-1", {
+        xPercent: 20,
+        scrollTrigger: {
+          target: "#title-service-1",
+          scrub: true,
+        },
+      }).scrollTrigger);
+
+      triggers.push(gsap.to("#title-service-2", {
+        xPercent: -30,
+        scrollTrigger: {
+          target: "#title-service-2",
+          scrub: true,
+        },
+      }).scrollTrigger);
+
+      triggers.push(gsap.to("#title-service-3", {
+        xPercent: 60,
+        scrollTrigger: {
+          target: "#title-service-3",
+          scrub: true,
+        },
+      }).scrollTrigger);
+
+      triggers.push(gsap.to("#title-service-4", {
+        xPercent: -40,
+        scrollTrigger: {
+          target: "#title-service-4",
+          scrub: true,
+        },
+      }).scrollTrigger);
+
+      // Cleanup function to prevent memory leaks
+      return () => {
+        triggers.forEach(trigger => trigger?.kill());
+      };
+    }
   });
   return (
-    <section className="mt-20 overflow-hidden font-light leading-snug text-center mb-28 md:mb-42 text-[30px] sm:text-[52px] md:text-[62px] lg:text-[100px]">
+    <section className="mt-20 overflow-x-hidden font-light leading-snug text-center mb-28 md:mb-42 text-[30px] sm:text-[52px] md:text-[62px] lg:text-[100px]">
       <div id="title-service-1" className="flex items-center gap-3">
         <p className="italic">Backends</p>
         <div className="w-10 h-0.5 md:h-1 md:w-32 bg-gold" />

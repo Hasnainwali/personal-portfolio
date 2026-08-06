@@ -31,14 +31,18 @@ const App = () => {
   };
 
 
+  const MAX_LOADER_MS = 4000;
 
   const { progress } = useProgress();
   const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
-    if (progress === 100) {
+    if (progress >= 100) {
       setIsReady(true);
+      return;
     }
+    const fallback = setTimeout(() => setIsReady(true), MAX_LOADER_MS);
+    return () => clearTimeout(fallback);
   }, [progress]);
 
   const Home = (

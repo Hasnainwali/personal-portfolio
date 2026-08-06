@@ -4,6 +4,7 @@ import Marquee from "react-fast-marquee";
 import { socials } from "../constants";
 import gsap from "gsap";
 import { Icon } from "@iconify/react/dist/iconify.js";
+import { useEffect, useRef, useState } from "react";
 
 const Contact = () => {
   const icon = "mdi:star-four-points";
@@ -17,8 +18,30 @@ const Contact = () => {
     "Your Vision, My Engineering",
     "Your Vision, My Engineering",
   ];
+
+  // IntersectionObserver for Marquee to pause when off-viewport
+  const [isMarqueeVisible, setIsMarqueeVisible] = useState(false);
+  const marqueeRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsMarqueeVisible(entry.isIntersecting);
+      },
+      { threshold: 0.1 }
+    );
+
+    if (marqueeRef.current) {
+      observer.observe(marqueeRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   useGSAP(() => {
-    gsap.from(".social-link", {
+    const triggers = [];
+
+    const animation = gsap.from(".social-link", {
       y: 100,
       opacity: 0,
       delay: 0.5,
@@ -29,6 +52,15 @@ const Contact = () => {
         trigger: ".social-link",
       },
     });
+
+    if (animation.scrollTrigger) {
+      triggers.push(animation.scrollTrigger);
+    }
+
+    // Cleanup function to prevent memory leaks
+    return () => {
+      triggers.forEach(trigger => trigger?.kill());
+    };
   }, []);
   return (
     <section id="contact" className="bg-[#0d0d0d]">
@@ -46,7 +78,7 @@ const Contact = () => {
               <div className="social-link">
                 <h2>E-mail</h2>
                 <div className="w-full h-px my-2 bg-white/30" />
-                <a href="mailto:developerkhan48@gmail.com" className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl">
+                <a href="mailto:developerkhan48@gmail.com" className="text-xl tracking-wider lowercase md:text-2xl lg:text-3xl break-all">
                   developerkhan48@gmail.com
                 </a>
               </div>
@@ -77,19 +109,23 @@ const Contact = () => {
             </div>
           </div>
         </div>
-        <Marquee
-          speed={80}
-          className="overflow-hidden w-full h-20 md:h-[100px] flex items-center marquee-text-responsive font-light uppercase whitespace-nowrap text-white bg-black"
-        >
-          {items.map((item, index) => (
-            <span
-              key={index}
-              className="flex items-center px-3 md:px-4 gap-x-6 md:gap-x-8 lg:px-5 lg:gap-x-10"
+        <div ref={marqueeRef}>
+          {isMarqueeVisible && (
+            <Marquee
+              speed={80}
+              className="overflow-hidden w-full h-20 md:h-[100px] flex items-center marquee-text-responsive font-light uppercase whitespace-nowrap text-white bg-black"
             >
-              {item} <Icon icon={icon} className="text-gold" />
-            </span>
-          ))}
-        </Marquee>
+              {items.map((item, index) => (
+                <span
+                  key={index}
+                  className="flex items-center px-3 md:px-4 gap-x-6 md:gap-x-8 lg:px-5 lg:gap-x-10"
+                >
+                  {item} <Icon icon={icon} className="text-gold" />
+                </span>
+              ))}
+            </Marquee>
+          )}
+        </div>
       </div>
     </section>
   );

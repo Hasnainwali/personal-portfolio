@@ -18,8 +18,8 @@ const AnimatedHeaderSection = ({
     const tl = gsap.timeline({
       scrollTrigger: withScrollTrigger
         ? {
-            trigger: contextRef.current,
-          }
+          trigger: contextRef.current,
+        }
         : undefined,
     });
     tl.from(contextRef.current, {
@@ -38,6 +38,7 @@ const AnimatedHeaderSection = ({
       "<+0.2"
     );
   }, []);
+
   return (
     <div ref={contextRef}>
       <div style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }}>
@@ -52,7 +53,7 @@ const AnimatedHeaderSection = ({
           </p>
           <div className="px-4 md:px-10">
             <h1
-              className={`uppercase banner-text-responsive block ${textColor}`}
+              className={`uppercase leading-12.5 md:leading-22 banner-text-responsive block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>
@@ -61,7 +62,7 @@ const AnimatedHeaderSection = ({
           </div>
         </div>
       </div>
-      <div className={`relative px-4 md:px-10 ${textColor}`}>
+      <div className={`relative my-1 md:my-2 px-4 md:px-10 ${textColor}`}>
         <div className="absolute inset-x-0 border-t-2" />
         <div className="py-12 sm:py-16 text-end">
           <AnimatedTextLines
