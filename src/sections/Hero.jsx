@@ -4,6 +4,7 @@ import { Environment, Float, Lightformer } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { LazyCanvas } from "../utils/imageOptimizer";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import { Suspense } from "react";
 
 const Hero = () => {
   const isMobile = useMediaQuery({ maxWidth: 853 });
@@ -24,7 +25,7 @@ Crafted with intent.`;
         text={text}
         textColor={"text-black"}
       />
-
+      {/* 
       <LazyCanvas
         fallback={
           <div
@@ -43,9 +44,11 @@ Crafted with intent.`;
             dpr={isMobile ? 1 : window.devicePixelRatio}
           >
             <ambientLight intensity={0.5} />
-            <Float speed={0.5}>
-              <Planet scale={isMobile ? 0.7 : 1} />
-            </Float>
+            <Suspense fallback={null}>
+              <Float speed={0.5}>
+                <Planet scale={isMobile ? 0.7 : 1} />
+              </Float>
+            </Suspense>
             <Environment resolution={256}>
               <group rotation={[-Math.PI / 3, 4, 1]}>
                 <Lightformer
@@ -76,7 +79,7 @@ Crafted with intent.`;
             </Environment>
           </Canvas>
         </figure>
-      </LazyCanvas>
+      </LazyCanvas> */}
     </section>
   );
 };

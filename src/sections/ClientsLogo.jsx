@@ -4,17 +4,12 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import projotnoTea from "/assets/clients/projotno_tea.png";
 import ssiBannu from "/assets/clients/ssibannu.png";
-import axisway from "/assets/clients/axisway.jpg";
-import pulseFitness from "/assets/clients/pulse_fitness.jpg";
 import playwearBD from "/assets/clients/playwearBD.jpg";
 import interaid from "/assets/clients/interaid.jpg";
 import puppetbrush from "/assets/clients/puppetbrush.jpg";
 import qahaf from "/assets/clients/qahaf.jpg";
-import retrofino from "/assets/clients/retrofino.jpg";
-import sikder_foundation from "/assets/clients/sikder_foundation.jpg";
-import treatosBD from "/assets/clients/treatosBD.jpg";
-import posterOne from "/assets/posters/poster-1.jpg";
-import posterTwo from "/assets/posters/poster-2.jpg";
+import posterOne from "/assets/posters/poster-1.webp";
+import posterTwo from "/assets/posters/poster-2.webp";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,10 +21,6 @@ const PLACEHOLDER_LOGOS = [
   interaid,
   puppetbrush,
   qahaf,
-  // retrofino,
-  // sikder_foundation,
-  // treatosBD,
-  // pulseFitness,
 ];
 
 const LogoCell = ({ logo, borderClasses = "" }) => {
