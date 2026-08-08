@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../constants/index.js'
-import SEO from '../components/Seo'
+import SEO from '../components/Seo.jsx'
 import { ImageOptimizer } from '../utils/imageOptimizer'
 
 const ProjectDetails = () => {

@@ -2,12 +2,9 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import projotnoTea from "/assets/clients/projotno_tea.png";
 import ssiBannu from "/assets/clients/ssibannu.png";
-import playwearBD from "/assets/clients/playwearBD.jpg";
-import interaid from "/assets/clients/interaid.jpg";
-import puppetbrush from "/assets/clients/puppetbrush.jpg";
-import qahaf from "/assets/clients/qahaf.jpg";
+import skyBlue from "/assets/clients/sky-blue.png";
+import hwTours from "/assets/clients/hw-tours.png";
 import posterOne from "/assets/posters/poster-1.webp";
 import posterTwo from "/assets/posters/poster-2.webp";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
@@ -15,12 +12,9 @@ import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 gsap.registerPlugin(ScrollTrigger);
 
 const PLACEHOLDER_LOGOS = [
-  projotnoTea,
   ssiBannu,
-  playwearBD,
-  interaid,
-  puppetbrush,
-  qahaf,
+  skyBlue,
+  hwTours
 ];
 
 const LogoCell = ({ logo, borderClasses = "" }) => {
@@ -70,7 +64,7 @@ export default function ClientsLogo() {
       <div className="">
         {/* Header */}
         <AnimatedHeaderSection
-          subTitle={"Brands i've Worked With"}
+          subTitle={"People & Brands i've Worked With"}
           title={"Clients"}
           text={text}
           textColor={"text-black"}
@@ -116,9 +110,7 @@ export default function ClientsLogo() {
                   className="w-full h-full"
                 />
               </div>
-              {/* <LogoCell logo={PLACEHOLDER_LOGOS[8]} borderClasses="border-r" />
 
-              <LogoCell logo={PLACEHOLDER_LOGOS[9]} /> */}
             </div>
           </div>
         </div>
@@ -130,31 +122,20 @@ export default function ClientsLogo() {
               logo={PLACEHOLDER_LOGOS[0]}
               borderClasses="border-r border-b"
             />
-            <LogoCell
-              logo={PLACEHOLDER_LOGOS[1]}
-              borderClasses="border-r border-b"
-            />
-            <LogoCell logo={PLACEHOLDER_LOGOS[2]} borderClasses="border-b" />
+
+
 
             <div className="col-span-2 aspect-square flex justify-center items-center pr-8 py-8 border-b border-r">
               <img src={posterOne} alt="poster one" className="w-full h-full" />
             </div>
-            <div className="grid grid-cols-1">
-              <LogoCell logo={PLACEHOLDER_LOGOS[3]} borderClasses="border-b" />
-              <LogoCell logo={PLACEHOLDER_LOGOS[4]} borderClasses="border-b" />
-            </div>
+
             <LogoCell
-              logo={PLACEHOLDER_LOGOS[5]}
+              logo={PLACEHOLDER_LOGOS[1]}
               borderClasses="border-r border-b"
             />
-            <LogoCell
-              logo={PLACEHOLDER_LOGOS[6]}
-              borderClasses="border-r border-b"
-            />
-            <LogoCell logo={PLACEHOLDER_LOGOS[7]} borderClasses="border-b" />
+
             <div className="grid grid-cols-1">
-              <LogoCell logo={PLACEHOLDER_LOGOS[8]} borderClasses="border-b" />
-              <LogoCell logo={PLACEHOLDER_LOGOS[9]} />
+              <LogoCell logo={PLACEHOLDER_LOGOS[2]} borderClasses="border-b" />
             </div>
             <div className="col-span-2 aspect-square flex justify-center items-center pl-8 pt-8 border-l">
               <img src={posterTwo} alt="poster two" className="w-full h-full" />
@@ -172,18 +153,6 @@ export default function ClientsLogo() {
             <div className="col-span-3 aspect-square flex justify-center items-center p-5 border-y">
               <img src={posterOne} alt="poster one" className="w-full h-full" />
             </div>
-            <LogoCell logo={PLACEHOLDER_LOGOS[3]} borderClasses="border-r" />
-            <LogoCell logo={PLACEHOLDER_LOGOS[4]} borderClasses="border-r" />
-            <LogoCell logo={PLACEHOLDER_LOGOS[5]} height="h-8" />
-            <LogoCell
-              logo={PLACEHOLDER_LOGOS[6]}
-              borderClasses="border-t border-r"
-            />
-            <LogoCell
-              logo={PLACEHOLDER_LOGOS[7]}
-              borderClasses="border-t border-r"
-            />
-            <LogoCell logo={PLACEHOLDER_LOGOS[8]} borderClasses="border-t" />
           </div>
         </div>
       </div>
