@@ -12,6 +12,7 @@ import Contact from "./sections/Contact";
 import ClientsLogo from "./sections/ClientsLogo";
 import Testimonials from "./sections/Testimonials";
 import SEO from "./components/Seo.jsx";
+import NotFound from "./components/NotFound.jsx";
 import Breadcrumbs from "./components/Breadcrumbs";
 import { Routes, Route } from 'react-router-dom'
 
@@ -31,7 +32,9 @@ const App = () => {
       "MERN Stack Developer, Full Stack Developer Pakistan, React Developer, Node.js Developer, MongoDB, SaaS Development, API Development, Web Application, E-Commerce Platform, Scalable Architecture",
   };
 
-
+  // Page content renders immediately. The 3D planet in Hero loads on its
+  // own, in the background, with its own local fallback (see LazyCanvas
+  // in Hero.jsx) — it no longer blocks Navbar/text/other sections.
   const Home = (
     <ReactLenis root className="relative w-screen min-h-screen overflow-x-auto">
       <Breadcrumbs />
@@ -57,6 +60,7 @@ const App = () => {
         <Route path="/" element={Home} />
         <Route path="/projects/:id" element={<ProjectDetails />} />
         <Route path="/services/:slug" element={<ServiceDetails />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </>
   );

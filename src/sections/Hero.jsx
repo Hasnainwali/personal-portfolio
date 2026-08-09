@@ -1,3 +1,4 @@
+import ParticleGlow from "../components/ParticleGlow";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
 
 const Hero = () => {
@@ -17,8 +18,15 @@ Crafted with intent.`;
         title={"Hasnain Wali"}
         text={text}
         textColor={"text-black"}
+        titleTag="h1"
       />
 
+      <div
+        className="absolute inset-0 -z-50 bg-linear-to-br from-gray-900 to-black"
+        style={{ width: "100vw", height: "100vh" }}
+      >
+        <ParticleGlow />
+      </div>
     </section>
   );
 };
