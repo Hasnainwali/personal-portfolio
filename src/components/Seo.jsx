@@ -1,5 +1,5 @@
 // src/components/Seo.jsx
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const SEO = ({
     title,

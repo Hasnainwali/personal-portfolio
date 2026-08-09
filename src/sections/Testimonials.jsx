@@ -12,41 +12,34 @@ const icon = "mdi:star";
 
 const testimonials = [
   {
-    company: interaid,
     quote:
       "An amazing developer and human being who truly understands what a platform needs to grow.",
-    name: "Md Azizul Haque",
-    title: "Owner, InterAiD",
+    name: "Amjad Ali shah",
+    title: "Owner, Amjad Properties",
   },
   {
-    company: puppetbrush,
     quote:
       "Very knowledgeable, patient, and always ready to explain things. Great experience working with him.",
-    name: "Kazi Farhan Masum",
-    title: "CEO, Puppetbrush",
+    name: "Hussain",
+    title: "Owner, hw-tours",
   },
   {
-    company: qahaf,
     quote:
-      "Thanks to him, we were able to launch our platform on time and start getting sales immediately.",
-    name: "Mustafa Mehedi",
-    title: "Co-Founder, Qahaf",
+      "Thanks to him, we were able to launch our platform on time and start getting sales immediately for our tech items.",
+    name: "Mohsin Ali",
+    title: "CEO, MA-Technologies",
   },
 ];
 
 const stats = [
-  { value: 3, suffix: "+", label: "Years of Experience" },
-  { value: 24, suffix: "", label: "Projects Completed" },
+  { value: 2, suffix: "+", label: "Years of Experience" },
+  { value: 14, suffix: "", label: "Projects Completed" },
   { value: 100, suffix: "%", label: "Client Satisfaction" },
 ];
 
 const TestimonialCard = ({ testimonial }) => (
   <div className="testimonial-card flex flex-col gap-6 justify-center items-center text-center text-lg font-light">
-    <img
-      src={testimonial.company}
-      alt="company logo"
-      className="h-8 w-auto invert-100"
-    />
+
     <p className="text-base leading-relaxed text-white/60">
       "{testimonial.quote}"
     </p>
@@ -138,7 +131,7 @@ const Testimonials = () => {
       {/* Stats Section */}
       <div
         ref={statsRef}
-        className="grid grid-cols-1 md:grid-cols-3 items-center justify-center gap-10 md:gap-16"
+        className="containergrid grid-cols-3 items-center justify-center gap-8 md:gap-16"
       >
         {stats.map((stat, index) => (
           <div key={index} className="stat-item bg-gradient-to-b from-[#0d0d0d] via-white/60 to-[#0d0d0d] md:pr-[1px] last:pr-0">
