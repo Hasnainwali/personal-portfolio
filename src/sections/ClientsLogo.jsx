@@ -88,19 +88,11 @@ export default function ClientsLogo() {
                 />
               </div>
             </div>
-            <div className="grid grid-cols-2 border-x">
+            <div className="grid grid-cols-1 border-x">
               <LogoCell
                 logo={PLACEHOLDER_LOGOS[2]}
                 borderClasses="border-r border-b"
               />
-              <LogoCell logo={PLACEHOLDER_LOGOS[3]} borderClasses="border-b" />
-              <LogoCell
-                logo={PLACEHOLDER_LOGOS[4]}
-                borderClasses="border-r border-b"
-              />
-              <LogoCell logo={PLACEHOLDER_LOGOS[5]} borderClasses="border-b" />
-              {/* <LogoCell logo={PLACEHOLDER_LOGOS[6]} borderClasses="border-r" />
-              <LogoCell logo={PLACEHOLDER_LOGOS[7]} height="h-6.5" /> */}
             </div>
             <div className="grid grid-cols-2">
               <div className="col-span-2 aspect-square flex justify-center items-center border-b pl-8 pb-8 overflow-hidden">
@@ -133,10 +125,10 @@ export default function ClientsLogo() {
               logo={PLACEHOLDER_LOGOS[1]}
               borderClasses="border-r border-b"
             />
-
             <div className="grid grid-cols-1">
               <LogoCell logo={PLACEHOLDER_LOGOS[2]} borderClasses="border-b" />
             </div>
+
             <div className="col-span-2 aspect-square flex justify-center items-center pl-8 pt-8 border-l">
               <img src={posterTwo} alt="poster two" className="w-full h-full" />
             </div>

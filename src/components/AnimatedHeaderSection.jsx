@@ -52,9 +52,9 @@ const AnimatedHeaderSection = ({
           >
             {subTitle}
           </p>
-          <div className="px-4 md:px-10">
+          <div className="px-4 mb-2 md:px-10">
             <TitleTag
-              className={`uppercase banner-text-responsive block ${textColor}`}
+              className={`uppercase leading-14 md:leading-22 banner-text-responsive block ${textColor}`}
             >
               {titleParts.map((part, index) => (
                 <span key={index}>{part} </span>

@@ -131,7 +131,7 @@ const Testimonials = () => {
       {/* Stats Section */}
       <div
         ref={statsRef}
-        className="containergrid grid-cols-3 items-center justify-center gap-8 md:gap-16"
+        className="container grid md:grid-cols-3 items-center justify-center gap-8 md:gap-16"
       >
         {stats.map((stat, index) => (
           <div key={index} className="stat-item bg-gradient-to-b from-[#0d0d0d] via-white/60 to-[#0d0d0d] md:pr-[1px] last:pr-0">
@@ -140,13 +140,13 @@ const Testimonials = () => {
             >
               <div className="text-center">
                 <span
-                  className="stat-value text-7xl font-light text-primary"
+                  className="stat-value md:text-7xl font-light text-primary"
                   data-value={stat.value}
                   data-suffix={stat.suffix}
                 >
                   0{stat.suffix}
                 </span>
-                <p className="mt-1 text-white/60 font-light text-lg">
+                <p className="mt-1 text-white/60 font-light md:text-lg">
                   {stat.label}
                 </p>
               </div>
