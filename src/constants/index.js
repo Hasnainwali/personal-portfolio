@@ -90,8 +90,8 @@ export const projects = [
       "Built for a local tour agency facing manual booking issues and poor customer management. I solved the problem by creating a centralized digital platform where users can explore, book, and manage tours online, while admins can control tour plans, bookings, and users from a dashboard. Scope included authentication, role-based access, booking management, cloud image storage, and scalable backend APIs. Result: reduced manual workload and improved booking efficiency.",
     href: "https://github.com/Hasnainwali",
     online: "https://hw-tours.netlify.app/",
-    image: "/assets/projects/online-tour.webp",
-    bgImage: "/assets/projects/online-tour.webp",
+    image: "/assets/projects/onlineture.png",
+    bgImage: "/assets/projects/onlineture.png",
     frameworks: [
       { id: 4, name: "React" },
       { id: 3, name: "JavaScript" },
@@ -113,8 +113,8 @@ export const projects = [
       "Designed and developed for an IT academy needing a strong online presence and internal management system. The challenge was handling course visibility, student inquiries, and content management in one place. I built a full-stack platform with dynamic course/service management, admin controls, inquiry handling, and media management. Scope included responsive frontend, secure backend, and scalable database design. Result: improved digital branding and easier operational management.",
     href: "https://github.com/Hasnainwali",
     online: "https://ssibannu.com",
-    image: "/assets/projects/ssib.webp",
-    bgImage: "/assets/projects/ssib.webp",
+    image: "/assets/projects/ssibannu.png",
+    bgImage: "/assets/projects/ssibannu.png",
     frameworks: [
       { id: 4, name: "React" },
       { id: 3, name: "JavaScript" },
@@ -136,8 +136,8 @@ export const projects = [
       "Created to build my personal brand and professionally showcase my work to clients and recruiters. The main challenge was standing out in a competitive market. I solved this through a premium modern UI, smooth animations, optimized performance, and clear storytelling of projects and skills. Scope included responsive design, advanced animations, SEO optimization, and reusable component architecture. Result: stronger professional presence and better client trust.",
     href: "https://github.com/Hasnainwali",
     online: "https://hasnainwali-official.vercel.app/",
-    image: "/assets/projects/portfolio.webp",
-    bgImage: "/assets/projects/portfolio.webp",
+    image: "/assets/projects/portfolio img1.png",
+    bgImage: "/assets/projects/portfolio img1.png",
     frameworks: [
       { id: 1, name: "React js" },
       { id: 2, name: "Tailwind CSS" },
@@ -154,10 +154,9 @@ export const projects = [
       "An Web App In which properties can be sell and buy. This is real Eastate platform where dealers can represent their societies, homes, villas etc.",
     caseStudy:
       "Developed a full-stack real estate platform that simplifies property buying and selling through a secure online marketplace. The application supports three user roles—Admin, Seller, and Buyer—allowing sellers to publish and manage property listings, buyers to discover and inquire about properties, and administrators to oversee users, listings, and platform activities through a centralized dashboard. Currently under active development with ongoing feature enhancements and performance improvements.",
-    href: "https://github.com/Hasnainwali",
-    online: "https://bannugull.com",
-    image: "/assets/projects/online-property.webp",
-    bgImage: "/assets/projects/online-property.webp",
+    href: "https://bannugull.com",
+    image: "/assets/projects/hex-color-gen.png",
+    bgImage: "/assets/projects/hex-color-gen.png",
     frameworks: [
       { id: 1, name: "React" },
       { id: 2, name: "Expres JS Node JS" },
@@ -168,15 +167,15 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     name: "Hex Color Generator",
     description:
       "An Web App which generates different gradient colors. The colors can be copied by one click.",
     caseStudy:
       "Developed as a utility tool for designers and developers who spend time manually selecting and testing colors. The problem was inefficient color experimentation. I solved it by creating an instant random gradient generator with one-click copy functionality. Scope included DOM manipulation, dynamic styling logic, and user-friendly interaction design. Result: faster design workflow and better developer productivity.",
     href: "https://github.com/Hasnainwali",
-    image: "/assets/projects/hex-col.webp",
-    bgImage: "/assets/projects/hex-col.webp",
+    image: "/assets/projects/hex-color-gen.png",
+    bgImage: "/assets/projects/hex-color-gen.png",
     frameworks: [
       { id: 1, name: "HTML" },
       { id: 2, name: "CSS" },
@@ -185,7 +184,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 5,
     name: "Private Journal App",
     description:
       "A personal diary App that tracks all your activities dynamically you saved here with complete authentication and ownership",
@@ -193,8 +192,8 @@ export const projects = [
       "Built to solve privacy and ownership issues in traditional note-taking apps. Users needed a secure place to save personal thoughts and daily activities. I created a full-stack journal platform with authentication, private note ownership, protected routes, and CRUD functionality. Scope included user security, scalable backend APIs, responsive UI, and database optimization. Result: users get a secure personal digital diary experience.",
     href: "https://github.com/Hasnainwali",
     online: "https://private-journal-frontend.vercel.app/",
-    image: "/assets/projects/private-journal.webp",
-    bgImage: "/assets/projects/private-journal.webp",
+    image: "/assets/projects/private-journal.png",
+    bgImage: "/assets/projects/private-journal.png",
     frameworks: [
       { id: 1, name: "React" },
       { id: 2, name: "tailwind css" },

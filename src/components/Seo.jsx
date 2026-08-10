@@ -1,6 +1,19 @@
 // src/components/Seo.jsx
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 
+const SITE_URL = "https://hasnainwali-official.vercel.app";
+const SITE_NAME = "Hasnain Wali";
+const DEFAULT_TITLE = "Hasnain Wali | MERN Stack Developer in Pakistan";
+const DEFAULT_DESCRIPTION =
+    "Hasnain Wali is a MERN stack developer based in Bannu, KPK, Pakistan, building full-stack web apps, e-commerce platforms, and SaaS products with React, Node.js, Express, and MongoDB.";
+const DEFAULT_IMAGE = `${SITE_URL}/images/hasnain.webp`;
+
+/**
+ * SEO component — one <Helmet> per route.
+ * Every route in App.jsx renders this with route-specific title/description/url.
+ * Schema.org blocks only render the entities relevant to that page —
+ * we don't dump every schema type on every route.
+ */
 const SEO = ({
     title,
     description,
@@ -10,28 +23,35 @@ const SEO = ({
     breadcrumbs = [],
     projectData = null,
     type = "website",
+    noindex = false,
 }) => {
-    const siteName = "Hasnain Wali";
-    const siteUrl = "https://hasnainwali-official.vercel.app";
-    const defaultTitle = "Hasnain Wali | MERN Stack Developer";
-    const defaultDescription =
-        "MERN Stack Developer from Pakistan. Building bussiness representative websites and scalable, high-performance web applications with React, Node.js, and MongoDB and using cloud services";
-    const defaultImage = "/images/hasnain.webp";
+    const pageTitle = title || DEFAULT_TITLE;
+    const pageDescription = description || DEFAULT_DESCRIPTION;
+    const pageImage = image
+        ? image.startsWith("http")
+            ? image
+            : `${SITE_URL}${image}`
+        : DEFAULT_IMAGE;
+    const pageUrl = url || SITE_URL;
 
-    const cleanKeywords =
-        keywords ||
-        "MERN Stack Developer, Full Stack Developer Pakistan, React Developer, Node.js Developer, MongoDB, Web Development Portfolio, portfolio, mern stack portfolio, SaaS Development, API Development, hasnainwali portfolio";
+    const defaultKeywords =
+        "MERN stack developer, full stack developer Pakistan, React developer, Node.js developer, MongoDB developer, Hasnain Wali, web developer Bannu KPK";
 
-    const portfolioSchema = {
+    // Person schema — describes YOU as an entity, independent of any one page.
+    // This is what lets Google show a Knowledge Panel-style understanding of
+    // "Hasnain Wali" as a developer, and ties your site + social profiles together.
+    const personSchema = {
         "@context": "https://schema.org",
         "@type": "Person",
+        "@id": `${SITE_URL}/#person`,
         name: "Hasnain Wali",
-        url: siteUrl,
-        image: defaultImage,
-        jobTitle: "MERN Stack Developer | Full Stack Engineer",
-        description: defaultDescription,
+        url: SITE_URL,
+        image: DEFAULT_IMAGE,
+        jobTitle: "MERN Stack Developer",
+        description: DEFAULT_DESCRIPTION,
         address: {
             "@type": "PostalAddress",
+            addressLocality: "Bannu",
             addressRegion: "KPK",
             addressCountry: "PK",
         },
@@ -42,146 +62,108 @@ const SEO = ({
         knowsAbout: [
             "React",
             "Node.js",
-            "MongoDB",
             "Express.js",
-            "Redux toolkit",
-            "Cloud",
-            "API Development",
+            "MongoDB",
+            "Redux Toolkit",
+            "TanStack Query",
+            "REST API Development",
             "Full Stack Development",
-            "SaaS Architecture",
         ],
     };
 
-    const portfolioCreativeWorkSchema = {
+    // WebSite schema — one per site, homepage only (see condition below).
+    // Enables the sitelinks search box eligibility in Google.
+    const websiteSchema = {
         "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        name: "Portfolio - MERN Stack Developer",
-        description: "Collection of full-stack web development projects",
-        url: `${siteUrl}/#portfolio`,
-        creator: {
-            "@type": "Person",
-            name: "Hasnain Wali",
-            url: siteUrl,
-        },
+        "@type": "WebSite",
+        "@id": `${SITE_URL}/#website`,
+        url: SITE_URL,
+        name: SITE_NAME,
+        description: DEFAULT_DESCRIPTION,
+        publisher: { "@id": `${SITE_URL}/#person` },
     };
 
-    const breadcrumbSchema = {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        itemListElement:
-            breadcrumbs.length > 0
-                ? breadcrumbs.map((crumb, idx) => ({
+    // BreadcrumbList — real routes only, no #fragment URLs.
+    const breadcrumbSchema =
+        breadcrumbs.length > 0
+            ? {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                itemListElement: breadcrumbs.map((crumb, idx) => ({
                     "@type": "ListItem",
                     position: idx + 1,
                     name: crumb.name,
-                    item: `${siteUrl}${crumb.url}`,
-                }))
-                : [
-                    {
-                        "@type": "ListItem",
-                        position: 1,
-                        name: "Home",
-                        item: siteUrl,
-                    },
-                    {
-                        "@type": "ListItem",
-                        position: 2,
-                        name: "Services",
-                        item: `${siteUrl}/#services`,
-                    },
-                    {
-                        "@type": "ListItem",
-                        position: 3,
-                        name: "Portfolio",
-                        item: `${siteUrl}/#portfolio`,
-                    },
-                ],
-    };
+                    item: `${SITE_URL}${crumb.url}`,
+                })),
+            }
+            : null;
 
-    let creativeWorkSchema = null;
-    if (projectData) {
-        creativeWorkSchema = {
+    // CreativeWork — only on project detail pages.
+    const creativeWorkSchema = projectData
+        ? {
             "@context": "https://schema.org",
             "@type": "CreativeWork",
             name: projectData.name,
             description: projectData.description,
-            image: projectData.image,
-            url: projectData.url,
-            creator: {
-                "@type": "Person",
-                name: "Hasnain Wali",
-            },
-            dateCreated: projectData.dateCreated,
-            technologies: projectData.technologies,
-            ...(projectData.rating && {
-                aggregateRating: {
-                    "@type": "AggregateRating",
-                    ratingValue: projectData.rating,
-                    bestRating: 5,
-                    worstRating: 1,
-                },
+            image: projectData.image?.startsWith("http")
+                ? projectData.image
+                : `${SITE_URL}${projectData.image}`,
+            url: pageUrl,
+            creator: { "@id": `${SITE_URL}/#person` },
+            ...(projectData.dateCreated && {
+                dateCreated: projectData.dateCreated,
             }),
-        };
-    }
+            ...(projectData.technologies?.length && {
+                keywords: projectData.technologies.join(", "),
+            }),
+        }
+        : null;
 
-    const organizationSchema = {
-        "@context": "https://schema.org",
-        "@type": "Organization",
-        name: "Hasnain Wali - Full Stack Development",
-        url: siteUrl,
-        logo: defaultImage,
-        description: defaultDescription,
-        sameAs: [
-            "https://www.linkedin.com/in/Hasnainwali/",
-            "https://github.com/Hasnainwali",
-        ],
-        foundingDate: "2022",
-        areaServed: "PK",
-    };
+    const isHome = pageUrl === SITE_URL || pageUrl === `${SITE_URL}/`;
 
     return (
         <Helmet>
-            <title>{title || defaultTitle}</title>
+            <html lang="en" />
+            <title>{pageTitle}</title>
 
-            <meta name="description" content={description || defaultDescription} />
-            <meta name="keywords" content={cleanKeywords} />
+            <meta name="description" content={pageDescription} />
+            <meta name="keywords" content={keywords || defaultKeywords} />
             <meta name="author" content="Hasnain Wali" />
-            <meta name="robots" content="index, follow, max-image-preview:large" />
-            <meta name="language" content="English" />
-            <meta name="revisit-after" content="7 days" />
+            <meta
+                name="robots"
+                content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large"}
+            />
 
-            <link rel="canonical" href={url || siteUrl} />
+            <link rel="canonical" href={pageUrl} />
 
+            {/* Open Graph */}
             <meta property="og:type" content={type} />
-            <meta property="og:title" content={title || defaultTitle} />
-            <meta property="og:description" content={description || defaultDescription} />
-            <meta property="og:image" content={image || defaultImage} />
-            <meta property="og:image:alt" content={title || defaultTitle} />
-            <meta property="og:url" content={url || siteUrl} />
-            <meta property="og:site_name" content={siteName} />
+            <meta property="og:title" content={pageTitle} />
+            <meta property="og:description" content={pageDescription} />
+            <meta property="og:image" content={pageImage} />
+            <meta property="og:image:alt" content={pageTitle} />
+            <meta property="og:url" content={pageUrl} />
+            <meta property="og:site_name" content={SITE_NAME} />
             <meta property="og:locale" content="en_US" />
 
+            {/* Twitter Card */}
             <meta name="twitter:card" content="summary_large_image" />
-            <meta name="twitter:title" content={title || defaultTitle} />
-            <meta name="twitter:description" content={description || defaultDescription} />
-            <meta name="twitter:image" content={image || defaultImage} />
-            <meta name="twitter:creator" content="@hasnain_wali" />
+            <meta name="twitter:title" content={pageTitle} />
+            <meta name="twitter:description" content={pageDescription} />
+            <meta name="twitter:image" content={pageImage} />
 
-            <script type="application/ld+json">{JSON.stringify(portfolioSchema)}</script>
-            <script type="application/ld+json">{JSON.stringify(organizationSchema)}</script>
-            <script type="application/ld+json">{JSON.stringify(portfolioCreativeWorkSchema)}</script>
-            <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+            {/* Structured data — Person always, WebSite only on home,
+          breadcrumb/creative-work only where relevant */}
+            <script type="application/ld+json">{JSON.stringify(personSchema)}</script>
+            {isHome && (
+                <script type="application/ld+json">{JSON.stringify(websiteSchema)}</script>
+            )}
+            {breadcrumbSchema && (
+                <script type="application/ld+json">{JSON.stringify(breadcrumbSchema)}</script>
+            )}
             {creativeWorkSchema && (
                 <script type="application/ld+json">{JSON.stringify(creativeWorkSchema)}</script>
             )}
-
-            <meta
-                name="google-site-verification"
-                content="2tQCEpYXcV65riHjryC66Aw0FVHiAVNIaz8IcYq9qkY"
-            />
-            <link rel="manifest" href="/manifest.json" />
-            <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-            <link rel="apple-touch-icon" href="/images/hasnain.webp.png" />
         </Helmet>
     );
 };

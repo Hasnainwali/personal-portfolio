@@ -1,32 +1,14 @@
 # ============================================================
-# ROBOT.TXT - CRAWLER INSTRUCTIONS
-# Why: Controls which pages Google crawls & indexes
+# robots.txt — crawler rules for hasnainwali-official.vercel.app
 # ============================================================
 
-# Default rules for all bots
 User-agent: *
 Allow: /
 Disallow: /admin
 Disallow: /private
-Disallow: /.well-known
-Disallow: /api
 Disallow: /*.json$
 
-# Crawl delay: tells bots how fast they can crawl (1 page per second)
-Crawl-delay: 1
-
-# Request-rate: max 1 page per 1 second
-Request-rate: 1/1s
-
-# Sitemap location - MOST IMPORTANT
-Sitemap: https://hasnainwali-official.vercel.app/sitemap.xml
-
-# Specific rules for Google - Fast crawl allowed
-User-agent: Googlebot
-Allow: /
-Crawl-delay: 0
-
-# Block low-quality bots that waste crawl budget
+# Scraper bots that add no SEO value — block to save crawl budget
 User-agent: MJ12bot
 Disallow: /
 
@@ -35,3 +17,5 @@ Disallow: /
 
 User-agent: SemrushBot
 Disallow: /
+
+Sitemap: https://hasnainwali-official.vercel.app/sitemap.xml

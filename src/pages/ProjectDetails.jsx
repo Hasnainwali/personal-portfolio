@@ -1,7 +1,7 @@
 import React from 'react'
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../constants/index.js'
-import SEO from '../components/Seo.jsx'
+import SEO from '../components/Seo'
 import { ImageOptimizer } from '../utils/imageOptimizer'
 
 const ProjectDetails = () => {
@@ -11,8 +11,9 @@ const ProjectDetails = () => {
     if (!project) {
         return (
             <div className="min-h-screen flex items-center justify-center">
+                <SEO title="Project Not Found | Hasnain Wali" noindex />
                 <div className="text-center">
-                    <h2 className="text-2xl font-semibold">Project not found</h2>
+                    <h1 className="text-2xl font-semibold">Project not found</h1>
                     <Link to="/" className="text-blue-500 underline mt-4 block">Back to home</Link>
                 </div>
             </div>
@@ -32,11 +33,15 @@ const ProjectDetails = () => {
     return (
         <main className="min-h-screen bg-white text-gray-900 p-6 md:p-12">
             <SEO
-                title={`${project.name} — Project`}
+                title={`${project.name} | Hasnain Wali Portfolio`}
                 description={project.description}
                 image={projectData.image}
                 url={`https://hasnainwali-official.vercel.app/projects/${project.id}`}
                 projectData={projectData}
+                breadcrumbs={[
+                    { name: "Home", url: "/" },
+                    { name: project.name, url: `/projects/${project.id}` },
+                ]}
             />
 
             <div className="max-w-5xl mx-auto">
