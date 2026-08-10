@@ -1,4 +1,4 @@
-# 🌐 3D Awwwards-Level Developer Portfolio
+# 🌐 Hasnain wali Developer Portfolio
 
 ### Built with React, GSAP, Three.js, TailwindCSS
 
@@ -32,19 +32,6 @@ This is a fully animated, interactive, 3D developer portfolio designed to **impr
 
 ---
 
-
-## 🛠️ Customization Tips
-
-- Change text, images, and links in /constants/index.js
-
-- Update 3D models and scene in Hero.jsx
-
-- Add your own contact info in Contact.jsx
-
-- Adjust colors, fonts, and layout via tailwind.config.js
-
----
-
 ## 🔗 Assets
 
 Assets used in the project can be found [here](https://github.com/user-attachments/files/19820923/public.zip)
@@ -57,9 +44,9 @@ If this helped you build or inspire your own site:
 
 - ⭐ Star this repo
 
-- 📬 [Connect on facebook]([https://www.facebook.com/in/hasnainwali](https://www.facebook.com/share/1KP3X5oysv/))
+- 📬 [Connect on facebook]([https://www.facebook.com/in/iamhasnainwali](https://www.facebook.com/share/1KP3X5oysv/))
 
-- 📷 [Follow me on Instagram](https://www.instagram.com/awlad_e_adam/reels/)
+- 📷 [Follow me on TikTok](https://www.tiktok.com/hasnain_real_dev/)
 
 ---
 
@@ -67,4 +54,4 @@ If this helped you build or inspire your own site:
 
 Drop a comment on the video or open an issue with your idea!
 
-> 📩 Like, subscribe, and let me know what kind of project you want to build together!
+> 📩 Like, follow, and let me know what kind of project you want to build together!
