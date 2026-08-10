@@ -141,6 +141,7 @@ const Navbar = () => {
               {socials.map((social, index) => (
                 <a
                   key={index}
+                  target="_blank"
                   href={social.href}
                   className="text-sm leading-loose tracking-widest uppercase hover:text-white transition-colors duration-300"
                 >

@@ -1,6 +1,5 @@
-import ParticleGlow from "../components/ParticleGlow";
-import Loader from "../components/Loader.jsx";
 import AnimatedHeaderSection from "../components/AnimatedHeaderSection";
+import Loader from "../components/Loader";
 
 const Hero = () => {
   const text = `Building scalable web experiences that feel effortless
@@ -23,7 +22,7 @@ Crafted with intent.`;
       />
 
       <div
-        className="absolute inset-0 -z-50 bg-linear-to-br from-gray-900 to-black"
+        className="absolute inset-0 -z-50"
         style={{ width: "100vw", height: "100vh" }}
       >
         <Loader />
