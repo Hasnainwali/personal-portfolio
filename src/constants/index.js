@@ -149,6 +149,30 @@ export const projects = [
 
   {
     id: 4,
+    name: "E-Shop — E-Commerce Platform",
+    description:
+      "A full-stack e-commerce platform developed during my internship as a two-member team project, featuring authentication, shopping cart functionality, product management, and a modern responsive user experience.",
+    caseStudy:
+      "Assigned as an internship project to a two-member development team, where I was responsible for implementing and improving several core features across both the frontend and backend. My contributions included integrating Google Authentication, developing the shopping cart system, implementing and managing application state with Redux Toolkit, optimizing server-side data fetching with TanStack Query, integrating ImageKit for image management, and resolving multiple frontend and backend errors and bugs. I worked across the MERN stack to ensure reliable communication between the client, APIs, database, and authentication systems. The project strengthened my practical experience in collaborative development, debugging, feature implementation, and building production-oriented e-commerce functionality.",
+    href: "https://github.com/Hasnainwali",
+    image: "/assets/projects/e-shop.webp",
+    bgImage: "/assets/projects/e-shop.webp",
+    frameworks: [
+      { id: 1, name: "React" },
+      { id: 2, name: "Node.js" },
+      { id: 3, name: "Express.js" },
+      { id: 4, name: "MongoDB" },
+      { id: 5, name: "Redux Toolkit" },
+      { id: 6, name: "TanStack Query" },
+      { id: 7, name: "Google Auth" },
+      { id: 8, name: "ImageKit" },
+      { id: 9, name: "JavaScript" },
+      { id: 10, name: "Tailwind CSS" },
+    ],
+  },
+
+  {
+    id: 5,
     name: "Online Property",
     description:
       "An Web App In which properties can be sell and buy. This is real Eastate platform where dealers can represent their societies, homes, villas etc.",
@@ -167,7 +191,7 @@ export const projects = [
   },
 
   {
-    id: 5,
+    id: 6,
     name: "Hex Color Generator",
     description:
       "An Web App which generates different gradient colors. The colors can be copied by one click.",
@@ -184,7 +208,7 @@ export const projects = [
   },
 
   {
-    id: 6,
+    id: 7,
     name: "Private Journal App",
     description:
       "A personal diary App that tracks all your activities dynamically you saved here with complete authentication and ownership",
