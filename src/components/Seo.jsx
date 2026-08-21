@@ -8,12 +8,7 @@ const DEFAULT_DESCRIPTION =
     "Hasnain Wali is a MERN stack developer based in Bannu, KPK, Pakistan, building full-stack web apps, e-commerce platforms, and SaaS products with React, Node.js, Express, and MongoDB.";
 const DEFAULT_IMAGE = `${SITE_URL}/images/hasnain.webp`;
 
-/**
- * SEO component — one <Helmet> per route.
- * Every route in App.jsx renders this with route-specific title/description/url.
- * Schema.org blocks only render the entities relevant to that page —
- * we don't dump every schema type on every route.
- */
+
 const SEO = ({
     title,
     description,
@@ -68,6 +63,14 @@ const SEO = ({
             "TanStack Query",
             "REST API Development",
             "Full Stack Development",
+            "Git/GitHub",
+            "AWS Server Deployment",
+            "S3 and CloudFront and EC2 Deployment",
+            "Vercel Deployment",
+            "Netlify Deployment",
+            "Responsive Web Design",
+            "UI/UX Principles",
+
         ],
     };
 
@@ -79,6 +82,7 @@ const SEO = ({
         "@id": `${SITE_URL}/#website`,
         url: SITE_URL,
         name: SITE_NAME,
+        alternateName: ["Hasnain portfolio", "Hasnain Wali Developer"],
         description: DEFAULT_DESCRIPTION,
         publisher: { "@id": `${SITE_URL}/#person` },
     };
